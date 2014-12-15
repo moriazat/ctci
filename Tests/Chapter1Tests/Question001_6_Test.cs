@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+
 namespace CrackingTheCodingInterview.Chapter1.Tests
 {
 	[TestClass]
@@ -14,7 +15,7 @@ namespace CrackingTheCodingInterview.Chapter1.Tests
 			
 			Question001_6.RotateMatrixByLayerInPlace(actual);
 			
-			Assert.IsTrue(ArraysAreEqual(expected, actual));
+			Assert.IsTrue(AreArraysEqual(expected, actual));
 		}
 
 		[TestMethod]
@@ -25,7 +26,7 @@ namespace CrackingTheCodingInterview.Chapter1.Tests
 			
 			Question001_6.RotateMatrixByLayerInPlace(actual);
 			
-			Assert.IsTrue(ArraysAreEqual(expected, actual));
+			Assert.IsTrue(AreArraysEqual(expected, actual));
 		}
 
 		[TestMethod]
@@ -36,7 +37,7 @@ namespace CrackingTheCodingInterview.Chapter1.Tests
 			
 			Question001_6.RotateMatrixByLayerInPlace(actual);
 			
-			Assert.IsTrue(ArraysAreEqual(expected, actual));
+			Assert.IsTrue(AreArraysEqual(expected, actual));
 		}		
 		
 		[TestMethod]
@@ -47,7 +48,7 @@ namespace CrackingTheCodingInterview.Chapter1.Tests
 			
 			Question001_6.RotateMatrixByLayerInPlace(actual);
 			
-			Assert.IsTrue(ArraysAreEqual(expected, actual));
+			Assert.IsTrue(AreArraysEqual(expected, actual));
 		}
 		
 		[TestMethod]
@@ -58,7 +59,7 @@ namespace CrackingTheCodingInterview.Chapter1.Tests
 			
 			Question001_6.RotateMatrixByLayerInPlaceRecursive(actual, 0, 0);
 			
-			Assert.IsTrue(ArraysAreEqual(expected, actual));
+			Assert.IsTrue(AreArraysEqual(expected, actual));
 		}
 
 		[TestMethod]
@@ -69,7 +70,7 @@ namespace CrackingTheCodingInterview.Chapter1.Tests
 			
 			Question001_6.RotateMatrixByLayerInPlaceRecursive(actual, 0, 2);
 			
-			Assert.IsTrue(ArraysAreEqual(expected, actual));
+			Assert.IsTrue(AreArraysEqual(expected, actual));
 		}
 
 		[TestMethod]
@@ -80,7 +81,7 @@ namespace CrackingTheCodingInterview.Chapter1.Tests
 			
 			Question001_6.RotateMatrixByLayerInPlaceRecursive(actual, 0, 3);
 			
-			Assert.IsTrue(ArraysAreEqual(expected, actual));
+			Assert.IsTrue(AreArraysEqual(expected, actual));
 		}		
 		
 		[TestMethod]
@@ -91,7 +92,7 @@ namespace CrackingTheCodingInterview.Chapter1.Tests
 			
 			Question001_6.RotateMatrixByLayerInPlaceRecursive(actual, 0, 4);
 			
-			Assert.IsTrue(ArraysAreEqual(expected, actual));
+			Assert.IsTrue(AreArraysEqual(expected, actual));
 		}
 
 		[TestMethod]
@@ -102,7 +103,7 @@ namespace CrackingTheCodingInterview.Chapter1.Tests
 			
 			Question001_6.RotateMatrixByLayerInPlaceOptimized(actual);
 			
-			Assert.IsTrue(ArraysAreEqual(expected, actual));
+			Assert.IsTrue(AreArraysEqual(expected, actual));
 		}
 
 		[TestMethod]
@@ -113,7 +114,7 @@ namespace CrackingTheCodingInterview.Chapter1.Tests
 			
 			Question001_6.RotateMatrixByLayerInPlaceOptimized(actual);
 			
-			Assert.IsTrue(ArraysAreEqual(expected, actual));
+			Assert.IsTrue(AreArraysEqual(expected, actual));
 		}
 
 		[TestMethod]
@@ -124,7 +125,7 @@ namespace CrackingTheCodingInterview.Chapter1.Tests
 			
 			Question001_6.RotateMatrixByLayerInPlaceOptimized(actual);
 			
-			Assert.IsTrue(ArraysAreEqual(expected, actual));
+			Assert.IsTrue(AreArraysEqual(expected, actual));
 		}		
 		
 		[TestMethod]
@@ -135,10 +136,10 @@ namespace CrackingTheCodingInterview.Chapter1.Tests
 			
 			Question001_6.RotateMatrixByLayerInPlaceOptimized(actual);
 			
-			Assert.IsTrue(ArraysAreEqual(expected, actual));
+			Assert.IsTrue(AreArraysEqual(expected, actual));
 		}		
 		
-		public bool ArraysAreEqual(int[,] array1, int[,] array2)
+		public bool AreArraysEqual(int[,] array1, int[,] array2)
 		{
 			int dimension = array1.GetLength(0);
 				
