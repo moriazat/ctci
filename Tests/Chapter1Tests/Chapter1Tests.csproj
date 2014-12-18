@@ -58,6 +58,7 @@
     <Compile Include="Question001_5_Test.cs" />
     <Compile Include="Question001_6_Test.cs" />
     <Compile Include="Question001_7_Test.cs" />
+    <Compile Include="Question001_8_Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Source\Chapter1\Chapter1.csproj">

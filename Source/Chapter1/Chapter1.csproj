@@ -48,6 +48,7 @@
     <Compile Include="Question001_5.cs" />
     <Compile Include="Question001_6.cs" />
     <Compile Include="Question001_7.cs" />
+    <Compile Include="Question001_8.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
