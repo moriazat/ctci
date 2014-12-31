@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter1", "Source\Chapter1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter1Tests", "Tests\Chapter1Tests\Chapter1Tests.csproj", "{14FAE82E-E518-4B3E-953E-8D622D85C7F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures", "Source\DataStructures\DataStructures.csproj", "{A6EF1D4B-7B7D-4C05-AA61-4142E3184692}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructuresTests", "Tests\DataStructuresTests\DataStructuresTests.csproj", "{B688FD34-EDEB-4A6F-85C9-E418E65DB3DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +27,22 @@ Global
 		{14FAE82E-E518-4B3E-953E-8D622D85C7F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14FAE82E-E518-4B3E-953E-8D622D85C7F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14FAE82E-E518-4B3E-953E-8D622D85C7F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6EF1D4B-7B7D-4C05-AA61-4142E3184692}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6EF1D4B-7B7D-4C05-AA61-4142E3184692}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6EF1D4B-7B7D-4C05-AA61-4142E3184692}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6EF1D4B-7B7D-4C05-AA61-4142E3184692}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B688FD34-EDEB-4A6F-85C9-E418E65DB3DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B688FD34-EDEB-4A6F-85C9-E418E65DB3DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B688FD34-EDEB-4A6F-85C9-E418E65DB3DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B688FD34-EDEB-4A6F-85C9-E418E65DB3DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BF05F78D-052D-499E-8530-1419373E80E2} = {63654B08-DC2C-429D-82DA-46B706D7899C}
+		{A6EF1D4B-7B7D-4C05-AA61-4142E3184692} = {63654B08-DC2C-429D-82DA-46B706D7899C}
 		{14FAE82E-E518-4B3E-953E-8D622D85C7F6} = {A01D8382-2702-4880-AF3C-E65A61810004}
+		{B688FD34-EDEB-4A6F-85C9-E418E65DB3DC} = {A01D8382-2702-4880-AF3C-E65A61810004}
 	EndGlobalSection
 EndGlobal
