@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Question002_1_Test.cs" />
+    <Compile Include="Question002_2_Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Source\Chapter2\Chapter2.csproj">
