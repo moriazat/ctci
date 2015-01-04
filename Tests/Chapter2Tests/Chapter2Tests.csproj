@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B688FD34-EDEB-4A6F-85C9-E418E65DB3DC}</ProjectGuid>
+    <ProjectGuid>{BDA246F4-6A2E-4427-A9D5-9C823500CC68}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DataStructuresTests</RootNamespace>
-    <AssemblyName>DataStructuresTests</AssemblyName>
+    <RootNamespace>CrackingTheCodingInterview.Chapter2.Tests</RootNamespace>
+    <AssemblyName>Chapter2Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -51,9 +51,13 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SinglyLinkedListTest.cs" />
+    <Compile Include="Question002_1_Test.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Source\Chapter2\Chapter2.csproj">
+      <Project>{f750c138-b474-4196-ab5f-8068c9cf335b}</Project>
+      <Name>Chapter2</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Source\DataStructures\DataStructures.csproj">
       <Project>{a6ef1d4b-7b7d-4c05-aa61-4142e3184692}</Project>
       <Name>DataStructures</Name>

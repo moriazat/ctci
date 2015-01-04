@@ -19,12 +19,12 @@ namespace CrackingTheCodingInterview.DataStructures
 			get { return false; }
 		}
 		
-		public SinglyLinkedListNode<T> First
+		public SinglyLinkedListNode<T> Head
 		{
 			get { return this.head; }
 		}
 		
-		public SinglyLinkedListNode<T> Last
+		public SinglyLinkedListNode<T> Tail
 		{
 			get { return this.tail; }
 		}
@@ -143,6 +143,9 @@ namespace CrackingTheCodingInterview.DataStructures
 					return false;
 				
 				before.Next = node.Next;
+
+                if (node == tail)
+                    tail = before;
 			}
 			
 			this.count--;
@@ -183,6 +186,9 @@ namespace CrackingTheCodingInterview.DataStructures
 					return false;
 					
 				prev.Next = curr.Next;
+
+                if (curr == tail)
+                    tail = prev;
 			}
 			
 			this.count--;

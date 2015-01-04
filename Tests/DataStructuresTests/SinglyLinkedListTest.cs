@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CrackingTheCodingInterview.DataStructures;
+using CrackingTheCodingInterview.TestHelpers;
 
 namespace CrackingTheCodingInterview.DataStructures.Tests
 {
@@ -22,7 +23,7 @@ namespace CrackingTheCodingInterview.DataStructures.Tests
 			SinglyLinkedList<int> sut = new SinglyLinkedList<int>(array);
 			
 			Assert.AreEqual(10, sut.Count);
-			Assert.IsTrue(AreEqual(array, sut));
+            Assert.IsTrue(Equality.AreEqual(array, sut));
 		}
 		
 		[TestMethod]
@@ -33,7 +34,7 @@ namespace CrackingTheCodingInterview.DataStructures.Tests
 			int[] expected = {25};
 			
 			Assert.AreEqual(1, sut.Count);
-			Assert.IsTrue(AreEqual(expected, sut));
+			Assert.IsTrue(Equality.AreEqual(expected, sut));
 		}
 		
 		[TestMethod]
@@ -45,7 +46,7 @@ namespace CrackingTheCodingInterview.DataStructures.Tests
 			int[] expected = {0,2,4,6,8,10};
 			
 			Assert.AreEqual(6, sut.Count);
-			Assert.IsTrue(AreEqual(expected, sut));
+			Assert.IsTrue(Equality.AreEqual(expected, sut));
 		}
 		
 		[TestMethod]
@@ -57,7 +58,7 @@ namespace CrackingTheCodingInterview.DataStructures.Tests
 			int[] expected = new int[0];
 			
 			Assert.AreEqual(0, sut.Count);
-			Assert.IsTrue(AreEqual(expected, sut));
+            Assert.IsTrue(Equality.AreEqual(expected, sut));
 		}
 		
 		[TestMethod]
@@ -67,12 +68,12 @@ namespace CrackingTheCodingInterview.DataStructures.Tests
 			SinglyLinkedList<int> sut = new SinglyLinkedList<int>(expected);
 			int[] actual = new int[9];
 			sut.CopyTo(actual, 0);
-			
-			Assert.IsTrue(AreEqual(expected, actual));
+
+            Assert.IsTrue(Equality.AreEqual(expected, actual));
 		}
 		
 		[TestMethod]
-		public void Remove_RemovingAnExistingItemFromNonEmptyList_RemovesItemSuccessfully()
+		public void Remove_RemovingExistingItemFromNonEmptyList_RemovesItemSuccessfully()
 		{
 			int[] initialArray = {1,2,3,4,5,6,7,8,9,10};
 			SinglyLinkedList<int> sut = new SinglyLinkedList<int>(initialArray);
@@ -82,24 +83,32 @@ namespace CrackingTheCodingInterview.DataStructures.Tests
 			Assert.IsTrue(actualResult);
 			Assert.AreEqual(9, sut.Count);
 		}
-		
-		private bool AreEqual<T>(ICollection<T> first, ICollection<T> second)
-		{
-			if (first.Count != second.Count)
-				return false;
-			
-			IEnumerator<T> it1 = first.GetEnumerator();
-			IEnumerator<T> it2 = second.GetEnumerator();
-			
-			for (int i = 0; i < first.Count; i++)
-			{
-				it1.MoveNext();
-				it2.MoveNext();
-				if (!it1.Current.Equals(it2.Current))
-					return false;
-			}
-			
-			return true;
-		}
+
+        [TestMethod]
+        public void Remove_RemoveTheTailByNode_RemovesAndUpdatesTheTail()
+        {
+            int[] initialArray = {1,2,3,4,5};
+            SinglyLinkedList<int> list = new SinglyLinkedList<int>(initialArray);
+            SinglyLinkedListNode<int> expected = list.Tail;
+            SinglyLinkedListNode<int> newTail = new SinglyLinkedListNode<int>(6);
+            list.Add(newTail);
+            list.Remove(newTail);
+            SinglyLinkedListNode<int> actual = list.Tail;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Remove_RemoveTheTail_RemovesAndUpdatesTheTail()
+        {
+            int[] initialArray = { 1, 2, 3, 4, 5 };
+            SinglyLinkedList<int> list = new SinglyLinkedList<int>(initialArray);
+            SinglyLinkedListNode<int> expected = list.Tail;
+            list.Add(6);
+            list.Remove(6);
+            SinglyLinkedListNode<int> actual = list.Tail;
+
+            Assert.AreEqual(expected, actual);
+        }
 	}
 }
