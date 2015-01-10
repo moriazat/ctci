@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace CrackingTheCodingInterview.DataStructures
 {
-	public sealed class SinglyLinkedList<T> : ICollection<T>
+	public class SinglyLinkedList<T> : ICollection<T>
 	{
-		private SinglyLinkedListNode<T> head;
-		private SinglyLinkedListNode<T> tail;
-		private int count;
+		protected SinglyLinkedListNode<T> head;
+		protected SinglyLinkedListNode<T> tail;
+		protected int count;
 		
 		public int Count
 		{
@@ -44,31 +44,43 @@ namespace CrackingTheCodingInterview.DataStructures
 			foreach (T item in collection)
 			{
 				node = new SinglyLinkedListNode<T>(item);
-				Add(node);
+				AddToTail(node);
 			}
 		}
 		
-		public void Add(SinglyLinkedListNode<T> node)
+		public void Add(T item)
+		{
+			AddToTail(new SinglyLinkedListNode<T>(item));
+		}
+		
+		public void AddToTail(T item)
+		{
+			AddToTail(new SinglyLinkedListNode<T>(item));
+		}
+		
+		public void AddToTail(SinglyLinkedListNode<T> node)
 		{
 			if (tail == null)
 			{
 				head = node;
 				tail = node;
 				tail.Next = null;
+				this.count++;
 			}
 			else
 			{
-				tail.Next = node;
-				node.Next = null;
-				tail = tail.Next;
+				InsertAfter(this.tail, node);
 			}
-			
-			this.count++;
 		}
 		
-		public void Add(T item)
+		public void AddToHead(T item)
 		{
-			Add(new SinglyLinkedListNode<T>(item));
+			AddToHead(new SinglyLinkedListNode<T>(item));
+		}
+		
+		public void AddToHead(SinglyLinkedListNode<T> node)
+		{
+			InsertBefore(this.head, node);
 		}
 		
 		public void Clear()
@@ -120,6 +132,53 @@ namespace CrackingTheCodingInterview.DataStructures
 			{
 				array[arrayIndex++] = p.Data;
 				p = p.Next;
+			}
+		}
+		
+		public void InsertAfter(SinglyLinkedListNode<T> existingNode, T item)
+		{
+			InsertAfter(existingNode, new SinglyLinkedListNode<T>(item));
+		}
+		
+		public void InsertAfter(SinglyLinkedListNode<T> existingNode, SinglyLinkedListNode<T> newNode)
+		{
+			if (existingNode  == null || newNode == null)
+				throw new ArgumentNullException();
+			
+			newNode.Next = existingNode.Next;
+			existingNode.Next = newNode;
+			
+			if (existingNode == this.tail)
+				tail = newNode;
+			
+			this.count++;
+		}
+		
+		public void InsertBefore(SinglyLinkedListNode<T> existingNode, T item)
+		{
+            InsertBefore(existingNode, new SinglyLinkedListNode<T>(item));
+		}
+		
+		public void InsertBefore(SinglyLinkedListNode<T> existingNode, SinglyLinkedListNode<T> newNode)
+		{
+			if (existingNode == null || newNode == null)
+				throw new ArgumentNullException();
+			
+			if (existingNode == this.head)
+			{
+				this.head = newNode;
+				newNode.Next = existingNode;
+				this.count++;
+			}
+			else
+			{
+				SinglyLinkedListNode<T> previous = FindBefore(existingNode);
+				if (previous != null)
+				{
+					newNode.Next = existingNode;
+					previous.Next = newNode;
+					this.count++;
+				}
 			}
 		}
 		

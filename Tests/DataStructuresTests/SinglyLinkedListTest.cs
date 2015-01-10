@@ -91,7 +91,7 @@ namespace CrackingTheCodingInterview.DataStructures.Tests
             SinglyLinkedList<int> list = new SinglyLinkedList<int>(initialArray);
             SinglyLinkedListNode<int> expected = list.Tail;
             SinglyLinkedListNode<int> newTail = new SinglyLinkedListNode<int>(6);
-            list.Add(newTail);
+            list.AddToTail(newTail);
             list.Remove(newTail);
             SinglyLinkedListNode<int> actual = list.Tail;
 
