@@ -4,72 +4,27 @@ using System.Collections;
 
 namespace CrackingTheCodingInterview.DataStructures
 {
-	public class Stack<T>: IEnumerable<T>, ICollection<T>
-	{
-		protected IList<T> items;
-		
-		public Stack()
+	public class Stack<T>: StackBase<T>
+	{		
+		public Stack() : base()
 		{
-			items = new List<T>();
+			// do nothing!
 		}
 		
-		public Stack(IEnumerable<T> collection)
+		public Stack(IEnumerable<T> collection) : base(collection)
 		{
-			items = new List<T>();
-			
-			foreach (T item in collection)
-				items.Add(item);
+			// do nothing!
 		}
-		
-		public int Count
-		{
-			get { return this.items.Count; }
-		}
-		
-		public bool IsReadOnly
-		{
-			get { return false; }
-		}
-		
-		public void Add(T item)
-		{
-			Push(item);
-		}
-		
-		public void Clear()
-		{
-			this.items.Clear();
-		}
-		
-		public bool Contains(T item)
-		{
-			return items.Contains(item);
-		}
-		
-		public void CopyTo(T[] array, int arrayIndex)
-		{
-			this.items.CopyTo(array, arrayIndex);
-		}
-		
-		public IEnumerator<T> GetEnumerator()
-		{
-			return this.items.GetEnumerator();
-		}
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return this.items.GetEnumerator();
-        }
-		
-		public T Peek()
+				
+		public override T Peek()
 		{
 			if (items.Count == 0)
-				throw new InvalidOperationException();
+				throw new InvalidOperationException("Stack is empty.");
 				
 			return items[items.Count-1];
 		}
 		
-		public virtual T Pop()
+		public override T Pop()
 		{
             if (items.Count == 0)
                 throw new InvalidOperationException("Stack is empty.");
@@ -79,14 +34,9 @@ namespace CrackingTheCodingInterview.DataStructures
 			return item;
 		}
 	
-		public virtual void Push(T item)
+		public override void Push(T item)
 		{
 			this.items.Add(item);
-		}
-		
-		public bool Remove(T item)
-		{
-			return this.items.Remove(item);
 		}
 	}	
 }
